@@ -1,0 +1,40 @@
+#include <feel/feel.hpp>
+
+int main(int argc, char**argv )
+{
+    using namespace Feel;
+    using Feel::cout;
+
+	Environment env( _argc=argc, _argv=argv,
+                   _desc=laplacianoptions,
+                   _about=about(_name="Greenpeace",
+                                _author="Feel++ Consortium",
+                                _email="feelpp-devel@feelpp.org"));
+
+    auto mesh = loadMesh(_mesh=new Mesh<Simplex<FEELPP_DIM,1>>);
+    auto Vh = Pch<2>( mesh );
+    auto u = Vh->element("u");
+
+    auto kappa = doption(_name="kappa");
+    auto f = expr( soption(_name="functions.f"), "f" );
+    auto g = expr( soption(_name="functions.g"), "g" );
+    auto v = Vh->element( g, "g" );
+
+
+    auto l = form1( _test=Vh );
+    l = integrate(_range=elements(mesh),
+                  _expr=f*id(v));
+
+    auto a = form2( _trial=Vh, _test=Vh);
+    a = integrate(_range=elements(mesh),
+                  _expr=kappa*gradt(u)*trans(grad(v)) );
+    a+=on(_range=markedfaces(mesh,"Dirichlet"), _rhs=l, _element=u, _expr=g);
+ 
+    auto e = exporter( _mesh=mesh );
+    e->addRegions();
+    e->add( "u", u );
+    e->add( "g", v );
+    e->save();
+    return 0;
+}
+
