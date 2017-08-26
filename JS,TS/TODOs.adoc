@@ -1,0 +1,69 @@
+TODO List  Semaine 23:
+
+* organiser l'environnement : IDE, Mathis + JS, Github  - **OK**
+* faire des tutoriels de JS et TS - **OK**
+* faire un plan de travail - **OK**
+* rapport : Introduction - **OK**
+* rapport : Décrire les algos - **OK**
+
+TODO List  Semaine 24:
+
+* rapport: Décrire SAW - **OK**
+* Méthode static : simple 2D - **OK**
+* Méthode static : simple 3D - **OK**
+* Changer couleur d'un vertex - **OK**
+* Méthode static : biased 2D - **NOT DONE!**
+* Méthode static : biased 3D - **NOT DONE!**
+
+TODO List  Semaine 25:
+
+* Méthode static : biased 2D,3D with weight -  **NOT DONE!**
+* Faire (afficher) une molécule de Buta-1,3-diène -**OK**
+* Faire (afficher) une molécule polymérisée de Buta-1,3-diène -**OK**
+* Faire (afficher) une molécule de suffre (8 atomes) - **OK**
+* rapport - décrire des molécules - **OK**
+* Méthode dynamique : reptation (Nokia snake) - **OK**
+
+TODO List  Semaine 26:
+
+* Méthode static : biased 2D,3D with weight - **NOT DONE!**
+* Ajouter l'animation sur serpent -  **NOT DONE!**
+* Bakground lattice pour algorithmes statiques - **NOT DONE!**  (after vucanisation)
+* Create a lattice for vulcanisation - **OK**
+* (extra) Méthode dynamique : pivot - **OK**
+
+TODO List  Semaine 27:
+
+* Méthode static : biased 2D,3D with weight - **NOT DONE! à demander**
+* Lancer vulcanistation sur le lattice - _pas fini_
+* Ajouter l'animation sur serpent - **NOT DONE! à demander**
+* _Rappot_ : Décrire l'idée du modèle épidémiologique SIR - **OK**
+* _Rappot_ : SIR de point de vue des EDPs - **OK**
+* _Rappot_ : SIR de point de vue des SAWs - **OK**
+
+TODO List  Semaine 28:
+
+* Méthode static : biased 2D,3D with weight - **OK**
+* SAW: épidémiologie - **OK**
+* SAW : finir vulcanistation - **to finish**
+* SAW : faire SIR dans Python - ** no more needed**
+* EDP : finir EDOs dans Octave - **NOT DONE**
+* EDP : méthode des caractèristiques? - **OK**
+* EDP : MEF - maths - ** no more needed **
+
+TODO List  Semaine 29:
+
+* Mathis: buttons - **to finish**
+* PDE : finish PDEs in Octave - **OK**
+* SAW : finish vulcanistation - **OK**
+* SAW : add animation to snake - **OK**
+* Put all in the same language - **to finish**
+* _Rapport_ : Put all together - **to finish**
+
+
+TODO List  Semaine 30:
+
+* Mathis: buttons
+* Put all in the same language 
+* _Rapport_ : Put all together 
+

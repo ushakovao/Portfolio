@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.5">
+<meta name="author" content="Oxana USHAKOVA (Encadrants : V. Vigon, C. Prud'homme)">
+<title>Applications de marches auto-évitantes et des EDO/EDP dans l&#8217;étude des polymères et de l&#8217;épidémiologie</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
+/* Remove comment around @import statement below when using as a custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
+audio,canvas,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+[hidden],template{display:none}
+script{display:none!important}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+a{background:transparent}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}
+input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.center{margin-left:auto;margin-right:auto}
+.spread{width:100%}
+p.lead,.paragraph.lead>p,#preamble>.sectionbody>.paragraph:first-of-type p{font-size:1.21875em;line-height:1.6}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:none}
+p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #ddddd8;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol,ul.no-bullet,ol.no-bullet{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ul.no-bullet{list-style:none}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
+abbr{text-transform:none}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
+blockquote cite:before{content:"\2014 \0020"}
+blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media only screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+table thead,table tfoot{background:#f7f8f7;font-weight:bold}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt,table tr:nth-of-type(even){background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.clearfix:before,.clearfix:after,.float-group:before,.float-group:after{content:" ";display:table}
+.clearfix:after,.float-group:after{clear:both}
+*:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
+*:not(pre)>code.nobreak{word-wrap:normal}
+*:not(pre)>code.nowrap{white-space:nowrap}
+pre,pre>code{line-height:1.45;color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;text-rendering:optimizeSpeed}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menu{color:rgba(0,0,0,.8)}
+b.button:before,b.button:after{position:relative;top:-1px;font-weight:400}
+b.button:before{content:"[";padding:0 3px 0 2px}
+b.button:after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header:before,#header:after,#content:before,#content:after,#footnotes:before,#footnotes:after,#footer:before,#footer:after{content:" ";display:table}
+#header:after,#content:after,#footnotes:after,#footer:after{clear:both}
+#content{margin-top:1.25em}
+#content:before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #ddddd8}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #ddddd8;padding-bottom:8px}
+#header .details{border-bottom:1px solid #ddddd8;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span:before{content:"\00a0\2013\00a0"}
+#header .details br+span.author:before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark:before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber:after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #ddddd8;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #efefed;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media only screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background-color:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #efefed;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #efefed;left:auto;right:0}}
+@media only screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:100%;background-color:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+.sect1{padding-bottom:.625em}
+@media only screen and (min-width:768px){.sect1{padding-bottom:1.25em}}
+.sect1+.sect1{border-top:1px solid #efefed}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor:before,h2>a.anchor:before,h3>a.anchor:before,#toctitle>a.anchor:before,.sidebarblock>.content>.title>a.anchor:before,h4>a.anchor:before,h5>a.anchor:before,h6>a.anchor:before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock>caption.title{white-space:nowrap;overflow:visible;max-width:0}
+.paragraph.lead>p,#preamble>.sectionbody>.paragraph:first-of-type p{color:rgba(0,0,0,.85)}
+table.tableblock #preamble>.sectionbody>.paragraph:first-of-type p{font-size:inherit}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #ddddd8;color:rgba(0,0,0,.6)}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock pre:not(.highlight),.listingblock pre[class="highlight"],.listingblock pre[class^="highlight "],.listingblock pre.CodeRay,.listingblock pre.prettyprint{background:#f7f7f8}
+.sidebarblock .literalblock pre,.sidebarblock .listingblock pre:not(.highlight),.sidebarblock .listingblock pre[class="highlight"],.sidebarblock .listingblock pre[class^="highlight "],.sidebarblock .listingblock pre.CodeRay,.sidebarblock .listingblock pre.prettyprint{background:#f2f1f1}
+.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;padding:1em;font-size:.8125em}
+.literalblock pre.nowrap,.literalblock pre[class].nowrap,.listingblock pre.nowrap,.listingblock pre[class].nowrap{overflow-x:auto;white-space:pre;word-wrap:normal}
+@media only screen and (min-width:768px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:.90625em}}
+@media only screen and (min-width:1280px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:1em}}
+.literalblock.output pre{color:#f7f7f8;background-color:rgba(0,0,0,.9)}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]:before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:#999}
+.listingblock:hover code[data-lang]:before{display:block}
+.listingblock.terminal pre .command:before{content:attr(data-prompt);padding-right:.5em;color:#999}
+.listingblock.terminal pre .command:not([data-prompt]):before{content:"$"}
+table.pyhltable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.pyhltable td{vertical-align:top;padding-top:0;padding-bottom:0;line-height:1.45}
+table.pyhltable td.code{padding-left:.75em;padding-right:0}
+pre.pygments .lineno,table.pyhltable td:not(.code){color:#999;padding-left:0;padding-right:.5em;border-right:1px solid #ddddd8}
+pre.pygments .lineno{display:inline-block;margin-right:.25em}
+table.pyhltable .linenodiv{background:none!important;padding-right:0!important}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock blockquote p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote:before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.5em;margin-right:.5ex;text-align:right}
+.quoteblock .quoteblock{margin-left:0;margin-right:0;padding:.5em 0;border-left:3px solid rgba(0,0,0,.6)}
+.quoteblock .quoteblock blockquote{padding:0 0 0 .75em}
+.quoteblock .quoteblock blockquote:before{display:none}
+.verseblock{margin:0 1em 1.25em 1em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract{margin:0 0 1.25em 0;display:block}
+.quoteblock.abstract blockquote,.quoteblock.abstract blockquote p{text-align:left;word-spacing:0}
+.quoteblock.abstract blockquote:before,.quoteblock.abstract blockquote p:first-of-type:before{display:none}
+table.tableblock{max-width:100%;border-collapse:separate}
+table.tableblock td>.paragraph:last-child p>p:last-child,table.tableblock th>p:last-child,table.tableblock td>p:last-child{margin-bottom:0}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all th.tableblock,table.grid-all td.tableblock{border-width:0 1px 1px 0}
+table.grid-all tfoot>tr>th.tableblock,table.grid-all tfoot>tr>td.tableblock{border-width:1px 1px 0 0}
+table.grid-cols th.tableblock,table.grid-cols td.tableblock{border-width:0 1px 0 0}
+table.grid-all *>tr>.tableblock:last-child,table.grid-cols *>tr>.tableblock:last-child{border-right-width:0}
+table.grid-rows th.tableblock,table.grid-rows td.tableblock{border-width:0 0 1px 0}
+table.grid-all tbody>tr:last-child>th.tableblock,table.grid-all tbody>tr:last-child>td.tableblock,table.grid-all thead:last-child>tr>th.tableblock,table.grid-rows tbody>tr:last-child>th.tableblock,table.grid-rows tbody>tr:last-child>td.tableblock,table.grid-rows thead:last-child>tr>th.tableblock{border-bottom-width:0}
+table.grid-rows tfoot>tr>th.tableblock,table.grid-rows tfoot>tr>td.tableblock{border-width:1px 0 0 0}
+table.frame-all{border-width:1px}
+table.frame-sides{border-width:0 1px}
+table.frame-topbot{border-width:1px 0}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+td>div.verse{white-space:pre}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.unstyled,ol.unnumbered,ul.checklist,ul.none{list-style-type:none}
+ul.unstyled,ol.unnumbered,ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1em;font-size:.85em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{width:1em;position:relative;top:1px}
+ul.inline{margin:0 auto .625em auto;margin-left:-1.375em;margin-right:0;padding:0;list-style:none;overflow:hidden}
+ul.inline>li{list-style:none;float:left;margin-left:1.375em;display:block}
+ul.inline>li>*{display:block}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist>table tr>td:first-of-type{padding:0 .75em;line-height:1}
+.colist>table tr>td:last-of-type{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
+.imageblock.left,.imageblock[style*="float: left"]{margin:.25em .625em 1.25em 0}
+.imageblock.right,.imageblock[style*="float: right"]{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em 0;border-width:1px 0 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;text-indent:-1.05em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background-color:#00fafa}
+.black{color:#000}
+.black-background{background-color:#000}
+.blue{color:#0000bf}
+.blue-background{background-color:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background-color:#fa00fa}
+.gray{color:#606060}
+.gray-background{background-color:#7d7d7d}
+.green{color:#006000}
+.green-background{background-color:#007d00}
+.lime{color:#00bf00}
+.lime-background{background-color:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background-color:#7d0000}
+.navy{color:#000060}
+.navy-background{background-color:#00007d}
+.olive{color:#606000}
+.olive-background{background-color:#7d7d00}
+.purple{color:#600060}
+.purple-background{background-color:#7d007d}
+.red{color:#bf0000}
+.red-background{background-color:#fa0000}
+.silver{color:#909090}
+.silver-background{background-color:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background-color:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background-color:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background-color:#fafa00}
+span.icon>.fa{cursor:default}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note:before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip:before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning:before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution:before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important:before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background-color:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]:after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background-color:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@media print{@page{margin:1.25cm .75cm}
+*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare):after,a[href^="https:"]:not(.bare):after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]:after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #ddddd8!important;padding-bottom:0!important}
+.sect1{padding-bottom:0!important}
+.sect1+.sect1{border:0!important}
+#header>h1:first-child{margin-top:1.25rem}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em 0}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span:before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]:before{display:block}
+#footer{background:none!important;padding:0 .9375em}
+#footer-text{color:rgba(0,0,0,.6)!important;font-size:.9em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+</style>
+</head>
+<body class="article">
+<div id="header">
+<h1>Applications de marches auto-évitantes et des EDO/EDP dans l&#8217;étude des polymères et de l&#8217;épidémiologie</h1>
+<div class="details">
+<span id="author" class="author">Oxana USHAKOVA (Encadrants : V. Vigon, C. Prud'homme)</span><br>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_introduction">Introduction</a></li>
+<li><a href="#__strong_chapitre_1_strong_marches_auto_évitantes_et_les_polymères"><strong>Chapitre 1</strong> : Marches auto-évitantes et les polymères</a>
+<ul class="sectlevel2">
+<li><a href="#_concept_mathématique">Concept mathématique</a></li>
+<li><a href="#_algorithmes_de_contruction_des_saw">Algorithmes de contruction des SAW</a></li>
+<li><a href="#_autre_application_vulcanisation">Autre application : Vulcanisation</a></li>
+<li><a href="#_autre_application_modèle_si">Autre application : Modèle SI</a></li>
+</ul>
+</li>
+<li><a href="#__strong_chapitre_2_strong_edo_edp_et_l_épidémiologie"><strong>Chapitre 2</strong> : EDO/EDP et l&#8217;épidémiologie</a>
+<ul class="sectlevel2">
+<li><a href="#_modèle_sir">Modèle SIR</a></li>
+<li><a href="#_modèle_sir_déterministe_comme_une_edp">Modèle SIR déterministe comme une EDP</a></li>
+<li><a href="#_améliorations_possibles">Améliorations possibles</a></li>
+</ul>
+</li>
+<li><a href="#_conclusion">Conclusion</a></li>
+<li><a href="#_project_management">Project Management</a>
+<ul class="sectlevel2">
+<li><a href="#_diagramme_de_gantt">Diagramme de Gantt</a></li>
+<li><a href="#_github">GitHub</a></li>
+</ul>
+</li>
+<li><a href="#_bibliographie">Bibliographie</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_introduction">Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cette recherche concerne l&#8217;étude des processus aléatoires et contient deux parties :  marches auto-évitantes (dans le contexte du synthèse des polymères) et EDO stochastiques (dans le contexte de l&#8217;épidémiologie).</p>
+</div>
+<div class="paragraph">
+<p>La science macromoléculaire est étroitement liée avec la chimie, la biochimie, la pharmacologie, etc. Le développement industriel de ces domaines explique la motivation de cette étude.</p>
+</div>
+<div class="paragraph">
+<p>Les polymères de synthèse sont devenus l&#8217;élément essentiel d&#8217;un nombre très important d&#8217;objets de la vie courante, dans lesquels ils ont souvent remplacé les substances naturelles. Ils sont présents dans de nombreux domaines industriels:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="usage.png" alt="usage">
+</div>
+</div>
+<div class="paragraph">
+<p>De point de vue économique l&#8217;industrie des polymères est crucial:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>100 $ générés en industrie des polymères donnent 230 $ en PIB</p>
+</li>
+<li>
+<p>1 emploi généré en industrie des polymères donne 3 emplois dans d&#8217;autres domaines.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Les mêmes principes sont utilisés dans la construction des protéines et dans l&#8217;épidémiologie, mais pour l&#8217;épidémiologie on veut se  concentrer sur l&#8217;approche classique, càd le système des ODEs.  On va voir les ODEs déterministes et stochastiques, mais aussi leur dérivation à partir d&#8217;un EDP avec le méthode des caractéristiques.</p>
+</div>
+<div class="paragraph">
+<p>La motivation de l&#8217;étude de l&#8217;épidémiologie est difficile à sous-estimer. Cette science permet à modéliser de nombreuses maladies, à éffectuer la prévention et/ou controle des epidémies. De plus, on utlise les mêmes idées dans networking, spam, etc.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__strong_chapitre_1_strong_marches_auto_évitantes_et_les_polymères"><strong>Chapitre 1</strong> : Marches auto-évitantes et les polymères</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Un polymère est une marcomolécule constitueé des la répétition des nombreuses monomères à liason covalente. Une chaîne contient typiquement \(10^3-10^5\) monomères, et a la longeur de \(10^{-5} - 10^{-2}\) cm. La forme géometrique est aussi importante que les propriétes chimiques.</p>
+</div>
+<div class="sect2">
+<h3 id="_concept_mathématique">Concept mathématique</h3>
+<div class="paragraph">
+<p>On appele une marche auto-évitante (SAW, Self-avoiding walk) une marche des points toutes distincts dans une lattice à dimension \(d\). Ce modèle a été créé spécialement pour simuler des polymères linéaires dans un dissolvant il y 50 ans.</p>
+</div>
+<div class="paragraph">
+<p>Sous la condition que la distance entre les points voisins est constante, on a \(2d\) pas possibles à chaque étape. Si de plus on suppose, que la marche ne peut pas revenir en arrière, on a \(2d-1\) pas possible à chaque étape sauf le premier (\(2d\)).</p>
+</div>
+<div class="paragraph">
+<p>Voici un exemple d&#8217;une marche auto-évitante sur 2D lattice:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="saw.png" alt="saw">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_algorithmes_de_contruction_des_saw">Algorithmes de contruction des SAW</h3>
+<div class="paragraph">
+<p>Les algorithmes statiques se basent sur les chaînes de Markov, autrement dit l&#8217;itération \(n\) ne dépend que de \(n-1\).</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Algorithmes Statiques</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Algorithmes</th>
+<th class="tableblock halign-left valign-top">Etapes d&#8217;algorithme</th>
+<th class="tableblock halign-left valign-top">Avantages</th>
+<th class="tableblock halign-left valign-top">Disavantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Algorithme de  Simple Sampling</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* Se mettre à l&#8217;origine du polymère
+</p><p class="tableblock">* Générer le premier pas aléatoirement/Choisir le premier pas arbitrairement
+</p><p class="tableblock">* Choisir aléatoirement un des \(2d-1\) pas
+</p><p class="tableblock">* Si la marche générée s&#8217;intersecte, on la rejète et commence dès le début - étape 1
+</p><p class="tableblock">* Si la marche générée nous convient, on rajoute ce pas dans la marche
+</p><p class="tableblock">* Si la marche générée est de longeur souhaitée,on accepte la marche. Sinon, on revient vers étape 3.
+</p><p class="tableblock">* Répéter jusqu&#8217;à la marche soit de la longeur souhaitée.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* Facile à programmer
+</p><p class="tableblock">* Pas de bias : toutes configurations sont possibles</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* Pas efficace pour des chaînes longues dans petites dimensions car la taux du rejet devient trop élévé.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Algorithme de Biased Sampling</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* Se mettre à l&#8217;origine du polymère
+</p><p class="tableblock">* Générer le premier pas aléatoirement/Choisir le premier pas arbitrairement
+</p><p class="tableblock">* Trouver tous les pas qui ne donne pas l&#8217;intersection
+</p><p class="tableblock">* Si il n&#8217;y a pas de tels pas - on met le poids \(\omega=0\), on rejète la marche générée et on revient vers le début - étape 2. Sinon on ajoute ce pas à la marche et recalculont le poids \(\omega\).
+</p><p class="tableblock">* Si la marche générée est de longeur souhaitée, on accepte la marche et on calcule le poids total. Sinon, on revient vers étape 3.
+</p><p class="tableblock">* Répéter jusqu&#8217;à la marche soit de la longeur souhaitée</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* Pas difficile à programmer
+</p><p class="tableblock">* Beaucoup plus efficace que l&#8217;algorithme précedent
+</p><p class="tableblock">* Pas de bias : toutes configurations sont possibles</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* Pas efficace pour des chaînes trop longues dans petites dimensions car la taux du rejet devient trop élévé</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Les algorithmes dynamiques se basent sur SAW, autrement dit l&#8217;itération \(n\) ne dépend pas de \(\sum_0^{n-1}\).</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. Algorithmes Dynamiques</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Algorithmes</th>
+<th class="tableblock halign-left valign-top">Etapes d&#8217;algorithme</th>
+<th class="tableblock halign-left valign-top">Avantages</th>
+<th class="tableblock halign-left valign-top">Disavantages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Algorithme de Reptation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* Générer ou chisir un SAW à n pas
+</p><p class="tableblock">* Choisir une fin aléatoirement et la retirer
+</p><p class="tableblock">* Choisir aléatoirement un des \(2d-1\) pas possibles de l&#8217;autre côté
+</p><p class="tableblock">* Si ce pas donne l&#8217;intersection, on revient à l&#8217;arrière et considère  cette configuration comme nouvelle
+</p><p class="tableblock">* Si ce pas ne donne pas de l&#8217;intersection,   on considère cette configuration comme nouvelle
+</p><p class="tableblock">* On revient à l&#8217;étape 2 jusqu&#8217;à on a la longeur  souhaitée de la marche</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* Très efficace
+</p><p class="tableblock">* Chaque itération ne demande que un peu de calcul</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* Pas intuitive
+</p><p class="tableblock">* Le résultat dépend de l&#8217;origine, de la condition initiale
+</p><p class="tableblock">* Bias : il y a des configuration qu&#8217;on ne peut jamais obtenir</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Algorithme de Pivot</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* Générer ou chisir un SAW à n pas
+</p><p class="tableblock">* Choisir aléatoirement un pivot sur la marche. Ce pivot divise la marche en deux
+</p><p class="tableblock">* Choisir aléatoirement une des deux sous-marches
+</p><p class="tableblock">* Choisir aléatoirement un opération symétrique et l&#8217;appliquer à la sous-marche
+</p><p class="tableblock">* Si cette opération donne l&#8217;intersection, on revient à l&#8217;arrière et considère  cette configuration comme nouvelle
+</p><p class="tableblock">* Si cette opération ne donne pas de l&#8217;intersection,   on considère cette configuration comme nouvelle
+</p><p class="tableblock">* On revient à l&#8217;étape 2 jusqu&#8217;à on a la longeur  souhaitée de la marche</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* Converge vite
+</p><p class="tableblock">* Pas de bias : toutes configurations sont possibles</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* Chaque itération demande beaucoup de calcul
+</p><p class="tableblock">* Difficile à implémenter à l&#8217;ordinateur : nombres des symétries augmentent très vite
+</p><p class="tableblock">* Pas trop efficace pour des chaînes longues, mais converge toujours aussi vite</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>La simulation des algorithmes statiques est assez intuitive et ne nécessite pas de l&#8217;explication graphiques, donc on affiche à la fois les deux chaînes générées:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="ss.png" alt="ss">
+</div>
+</div>
+<div class="paragraph">
+<p>Par contre, pour les algorithmes dynamiques on a fait deux fenêtres : la chaîne initiale et la chaîne générée:</p>
+</div>
+<div class="paragraph">
+<p>Algorithme de Reptation</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="snake.png" alt="snake">
+</div>
+</div>
+<div class="paragraph">
+<p>Algorithme de Pivot</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="pivot.png" alt="pivot">
+</div>
+</div>
+<div class="sect3">
+<h4 id="_comparaisons_des_algorithmes">Comparaisons des algorithmes</h4>
+<div class="paragraph">
+<p>Les résultats réçus ne sont pas étonnants: on peut observer l&#8217;augmentation du temps d&#8217;exécution pour les algorithmes statiques en fonction de N. L&#8217;algorithme de Reptation est assez stable, par contre l&#8217;algorothme de pivot ne semble pas trop éfficace par rapport aux autres.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="time.png" alt="time">
+</div>
+</div>
+<div class="paragraph">
+<p>Le nombre d&#8217;essai avant succèss est un autre moyen de voir l&#8217;efficacité. Ici de nouveau les méthodes statiques, surtout le méthode simple, demande de plus en plus tentatives pour construire la chaine nécessaire.  <strong>L&#8217;algorithmede Reptation</strong> reste toujours le plus optimal. De plus, le coefficient de corrélation entre temps d&#8217;exécution et nb d&#8217;essais avant succès pour cet algorithme est presque égal à 1, ce qui est important pour la gestion de grands projets (à l&#8217;étape de planification). Il faut quand même tenir compte que les méthodes dynamiques ont besoin de la marche auto-évitante initiale, contruite évidemment par un des méthodes statiques.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="att.png" alt="att">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_autre_application_vulcanisation">Autre application : Vulcanisation</h3>
+<div class="paragraph">
+<p>Vulcanisation est un procédé chimique consistant à incorporer un agent vulcanisant (soufre) à un polymère pour former des ponts entre les chaînes molèculaires après la cuisson. Cette opération est largement utiliser dans le domaine de la production des pneu, car le polymère vulcanisé devient plus élastique et solide, moins plastique et moins dissoluble en dissolvants organiques.</p>
+</div>
+<div class="paragraph">
+<p>Considèrons un 2-méthylbuta-1,3-diène polymérisé, autrement dit le caoutchouc naturel. Si on rajoute du soufre, après cuisson, on obtient un nouveau matériau qu&#8217;on utilise quotidiennement aujourd&#8217;hui. A l&#8217;echelle moléculaire on voit un réseau des monomères liés entre eux directement (comme le polymère d&#8217;avant) et par les molécules d&#8217;agent vulcanisant.</p>
+</div>
+<div class="paragraph">
+<p>Voici un exemple avec le caoutchouc synthétique buta-1,3-diène polymérisé.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="m1.png" alt="m1">
+</div>
+</div>
+<div class="paragraph">
+<p>On rajoute du soufre et après "la cuisson" on obtient le réseau des monomères liés entre eux en polymères et liés aux monomères des macromolécules voisines par les ponts du soufre. La longeur du pont, càd le nombre des atomes du soufre, varie aléatoirement de 1 à 8:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="m2.png" alt="m2"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="vulca2D.png" alt="vulca2D"></span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Le soufre n&#8217;affect pas tous les monomères d&#8217;une molécule, même pas tous les molécules - les doubles liens affectés sont choisi aléatoirement. Mais en augmentant la concentration du soufre à 30% on se retrouve dans le cas où tous les doubles liens sont pris par soufre et la longeur des pont n&#8217;excède 2 atomes : le matériau résultant est l&#8217;ébonite. La longeurs réduite des ponts s&#8217;explique par les condition de cuisson : aux temperatures exrtrêmes ( \(&gt; 800°\) ) le nombre des atomes dans une molécule de soufre diminue de 8 à 1-2.</p>
+</div>
+<div class="paragraph">
+<p>Pour simuler la vulcanisation en Mathis on utilise le méthode statique "Biased Sampling". On peut changer la taille du "réseau" et le nombre des molécules du soufre :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="VulcaMine.png" alt="VulcaMine">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_autre_application_modèle_si">Autre application : Modèle SI</h3>
+<div class="paragraph">
+<p>Comme l&#8217;introduction au chapitre 2 on va considéré un exemple le plus simple de l&#8217;épidémiologie -  le modèle SI : susceptible, infected - est un modèle très simple, qui permet de modèliser la propagation de la varicelle et d&#8217;autres maladies qui peuvent être coupées par vaccination.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="SIscheme.png" alt="SIscheme">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="SIdyn.png" alt="SIdyn">
+</div>
+</div>
+<div class="paragraph">
+<p>On a fait une simulation du modèle SI en mathis. On a utilisé les marches auto-évitantes sur un arbre, générées par l&#8217;algorithme statique "Biased Sampling".</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="SI.mp4" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__strong_chapitre_2_strong_edo_edp_et_l_épidémiologie"><strong>Chapitre 2</strong> : EDO/EDP et l&#8217;épidémiologie</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Les modèles mathématiques de maladies infectieuses ont commencé à être mis en pratique avec le problème du SIDA dans les années 1980. Ces modèles se basent sur le même rincipe :  on divise la population en classes épidémiologiques tels que les individus susceptibles d&#8217;être infectés, ceux qui sont infectieux, et ceux qui ont acquis une immunité à la suite de la guérison. Cette approche est utilisée non seulement   pour modéliser de très nombreuses maladies, mais aussi dans l&#8217;étude de la science des réseaux.</p>
+</div>
+<div class="sect2">
+<h3 id="_modèle_sir">Modèle SIR</h3>
+<div class="paragraph">
+<p>L&#8217;objet principal de cette étude est le modèle SIR : susceptible, infected, recovered - un autre modèle assez  simple, à partir duquel on dérive des modèles plus complexes. SIR permet de modèliser la propagation de la rougele ou parotidite virale. De plus, on supose le cas sans dynamique vitale, c.à.d personne n&#8217;est ni née, ni décédée (cause naturelle).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="SIRscheme.png" alt="SIRscheme">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="SIRdynamique.png" alt="SIRdynamique">
+</div>
+</div>
+<div class="sect3">
+<h4 id="_odes_déterministes">ODEs Déterministes</h4>
+<div class="paragraph">
+<p>Le modèle SIR est décrit par le système des ODEs suivant:</p>
+</div>
+<div class="paragraph">
+<p>Problème initial:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>\(\frac{dS}{dt}= - \alpha IS\)</p>
+</li>
+<li>
+<p>\(\frac{dI}{dt}= \alpha IS -(\gamma + \beta) I\)</p>
+</li>
+<li>
+<p>\(\frac{dR}{dt}= \beta I \)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>avec \(\alpha\) - taux d&#8217;infection, \(\beta\) - taux de rétablissement, \(\gamma\) - taux de mortalité, induite par l&#8217;infection.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_odes_stochastiques">ODEs Stochastiques</h4>
+<div class="paragraph">
+<p>On fait le choix aléatoire entre S,I,R:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Si on choisi S, donc on le change pour I avec la probabilité \( \frac{\alpha NI(t)}{N-1}\)</p>
+</li>
+<li>
+<p>Si on choisi I, donc on le change pour R avec la probabilité \(\beta\)</p>
+</li>
+<li>
+<p>Si on choisi R, donc on le change pour S avec la probabilité \(\gamma\)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Sous les hypothèses:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>\(A(\Delta t) \approx A_0 \Delta t\)</p>
+</li>
+<li>
+<p>\(B(\Delta t) \approx B_0 \Delta t\)</p>
+</li>
+<li>
+<p>\(C(\Delta t) \approx C_0 \Delta t\)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>On obtient la discretization Euler du problème initial:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>\(S(t+\Delta t)=S(t)(1-A(\Delta t)I(t))+R(t)C(\Delta t)\)</p>
+</li>
+<li>
+<p>\(I(t+\Delta t)=I(t)(1-B(\Delta t))+A(\Delta t) I(t) S(t)\)</p>
+</li>
+<li>
+<p>\(R(t+\Delta t)=R(t)(1-C(\Delta t))+B(\Delta t)I(t)\)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_résultats">Résultats</h4>
+<div class="paragraph">
+<p>1 personne infectée sur 50 avec taux de mortalité induite par l&#8217;infection \(\gamma = 0.1\) et taux de rétablissement \(\beta = 0.3\)</p>
+</div>
+<div class="paragraph">
+<p>taux d&#8217;infection \(\alpha = 0.2\)</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="d1_02.jpg" alt="d1 02"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="s1_02.jpg" alt="s1 02"></span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>taux d&#8217;infection \(\alpha = 0.5\)</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="d1_05.jpg" alt="d1 05"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="s1_05.jpg" alt="s1 05"></span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>taux d&#8217;infection \(\alpha = 0.8\)</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="d1_08.jpg" alt="d1 08"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="s1_08.jpg" alt="s1 08"></span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>20 personne infectée sur 50 avec taux de mortalité induite par l&#8217;infection \(\gamma = 0.1\) et taux de rétablissement \(\beta = 0.3\)</p>
+</div>
+<div class="paragraph">
+<p>taux d&#8217;infection \(\alpha = 0.2\)</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="d20_02.jpg" alt="d20 02"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="s20_02.jpg" alt="s20 02"></span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>taux d&#8217;infection \(\alpha = 0.5\)</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="d20_05.jpg" alt="d20 05"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="s20_05.jpg" alt="s20 05"></span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>taux d&#8217;infection \(\alpha = 0.8\)</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="d20_08.jpg" alt="d20 08"></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="image"><img src="s20_08.jpg" alt="s20 08"></span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_modèle_sir_déterministe_comme_une_edp">Modèle SIR déterministe comme une EDP</h3>
+<div class="paragraph">
+<p>Le modèle SIR peut considéré comme une EDP hyperbolique de Kolmogorov, qui peut être résolue par le méthode des caractéristiques</p>
+</div>
+<div class="sect3">
+<h4 id="_la_méthode_des_caractéristiques">La méthode des caractéristiques</h4>
+<div class="paragraph">
+<p>La méthode des caractéristiques est une technique permettant de résoudre les équations aux dérivées partielles. Particulièrement adaptée aux problèmes de transport, elle est utilisée dans de nombreux domaines tels que la mécanique des fluides ou le transport de particules.</p>
+</div>
+<div class="paragraph">
+<p>Pour une équation aux dérivées partielles du premier ordre, la méthode des caractéristiques cherche des courbes  « caractéristiques » le long desquelles l&#8217;équation aux dérivées partielles se réduit à une simple équation différentielle ordinaire. La résolution de l&#8217;équation différentielle ordinaire le long d&#8217;une caractéristique permet de retrouver la solution du problème original.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_dérivation_de_edp_hyperbolique_de_kolmogorov">Dérivation de EDP hyperbolique de Kolmogorov</h4>
+<div class="paragraph">
+<p>Supposons \(P_{N, \Delta t} (t,n,m)\) - la probabilité au moment \(t\) d&#8217;avoir \(n\) personnes susceptibles, \(m\) personnes infectées et \(N-n-m\) personnes immunisées dans population constante \(N\).</p>
+</div>
+<div class="paragraph">
+<p>Les constantes \(\alpha, \beta, \gamma\) au limite</p>
+</div>
+<div class="paragraph">
+<p>\(P_{N, \Delta t} (t+\Delta t,n,m) = \alpha \frac{(n+1)(m-1)}{N(N-1)} P_{N, \Delta t}(t,n+1,m-1)\)
+\( + \beta \frac{m+1}{N} P_{N, \Delta t} (t,n,m+1) + \gamma \frac{N-n-m+1}{N}P_{N, \Delta t}(t,n-1,m) \)
+\( + (\frac{n}{N} (1-\alpha \frac{m}{N-1}) +\frac{m}{N}(1-\beta) + \frac {N-n-m}{N}(1-\gamma)  ) P_{N, \Delta t}(t,n,m)\)</p>
+</div>
+<div class="paragraph">
+<p>Maintenant, on pose \(x=n/N\), \(y=m/N\) et \(p(t,x,y)=NP_{N, \Delta t}(t,xN,yN)\).</p>
+</div>
+<div class="paragraph">
+<p>\(t+\Delta t,x,y)= \alpha \frac{(x+1/N)(y-1/N)}{1-1/N} p(t,x+1/N,y-1/N)\)
+\(+ \beta (y+\frac{1}{N}) p(t,x,y+1/N) + \gamma (1-x-y+\frac{1}{N}) p(t,x-1/N,y)\)
+\( + (x(1-\frac{\alpha y}{1-1/N}) y(1-\beta)(1-x-y)(1-\gamma)  p(t,x,y)\)
+\( \approx p+\frac{1}{N} (\partial_x ((\alpha xy - \gamma(1-x-y))p) +\partial_y((\beta-\alpha x)yp) \)</p>
+</div>
+<div class="paragraph">
+<p>Enfin, on obtient l&#8217;EDP hyperbolique de Kolmogorov:</p>
+</div>
+<div class="paragraph">
+<p>\(\partial_t p = \partial_x ((axy-c(1-x-y))p)+\partial_y ((b-ax)yp) \)</p>
+</div>
+<div class="paragraph">
+<p>avec la probabilité \( \frac{d}{dt} \int_S p(t,x,y)dxdy=0\) où S est l&#8217;ensemble du maillage.</p>
+</div>
+<div class="paragraph">
+<p>Dans le cas où on suppose qu&#8217;on sait la proportion exacte de \(S,I\) et \( R\) au moment \(t\), donc on peut trouver la solution pour tout \(t\).  Dans notre cas, on ne sait que la loi de  = probabilité, donc l&#8217;équation de Kolmogorov transport cette probabilité dans le temps.</p>
+</div>
+<div class="paragraph">
+<p>Soit <strong>x</strong> = (x,y) , \(\Phi_t(\textbf{x})\) - est la carte des flux pour le modèle SIR :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>\(X = c(1-X-Y)- \alpha XY\)</p>
+</li>
+<li>
+<p>\(Y = (aX-b)Y\)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Let \(p_0(\textbf{x}) \in C^1 (R^2)\) et \(Q\) satisfait:</p>
+</div>
+<div class="paragraph">
+<p>\( F * \nabla Q = - \nabla * F \) (F is rhs).</p>
+</div>
+<div class="paragraph">
+<p>On réecrit :</p>
+</div>
+<div class="paragraph">
+<p>\(p(t,x,y) = e^{Q(\textbf x)-Q(\Phi_{-t}(\textbf{x}))}p_0(\Phi_{-t}(\textbf{x}))\) avec \(\textbf{x}=(x,y)\).</p>
+</div>
+<div class="paragraph">
+<p>Donc au final avec \({x}_0 \in\) S, càd  \({x}_0\) - élément du maillage:</p>
+</div>
+<div class="paragraph">
+<p>\(e^{-Q(\phi_t( \textbf{x}_0))}p(t,\phi_t(\textbf{x}_0)) =e^{Q(\textbf{x}_0)} p_0(\textbf{x}_0) \)</p>
+</div>
+<div class="paragraph">
+<p>Par conséquent:</p>
+</div>
+<div class="paragraph">
+<p>\(0=e^{Q(\phi_t (x_0))} \frac{d}{dt} e^{-Q(\phi_t(\textbf{x}_0))}p(t,\phi_t(\textbf{x}_0))= \)</p>
+</div>
+<div class="paragraph">
+<p>\(=-F(\phi_t(\textbf{x}_0))*\nabla Q (\phi_t(\textbf{x}_0))p(t,\phi_t(\textbf{x}_0))+\partial_t p(t,\phi_t (\textbf{x}_0))+F(\phi_t(\textbf{x}_0)) \nabla p(t,\phi_t(\textbf{x}_0))\)</p>
+</div>
+<div class="paragraph">
+<p>\(=\nabla * Fp+ F\nabla p+ \partial_t p\)</p>
+</div>
+<div class="paragraph">
+<p>\(=\partial_t p + \nabla *(pF)\)</p>
+</div>
+<div class="paragraph">
+<p>D&#8217;où vient, que les equations du modèle SIR  forment les caractéristiques pour l&#8217;EDP hyperbolique de Kolmogorov et la densité de la probabilité sera transporté le long de ces caractéristiques.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_améliorations_possibles">Améliorations possibles</h3>
+<div class="paragraph">
+<p>Pour l&#8217;étude plus détailée de l&#8217;épidémiologie on propose l&#8217;équation de Fokker-Planck - une équation aux dérivées partielles linéaire que doit satisfaire la densité de probabilité de transition d&#8217;un processus de Markov. Cette équation a permit à étudier le mouvement brownien d&#8217;une particule dans un champ de forces. Vue la nature stochastique de cet EDP, sa solution avec MEF nécessite de l&#8217;adaptation du maillage à chaque pas. FreeFem++ permet le faire assez simple:</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<video src="adaptMesh.mp4" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion">Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Partie 1</strong>: Les méthodes statiques sont très facile à implémenter et ils sont nécessaires pour créer des marches pour les méthodes dynamiques. Par contre, pour des simulations réelles l&#8217;efficacité de ces méthodes est limité par le nombre des monomères dans une chaîne.
+En revanche, les méthodes dynamiques ne sont pas si intuitives mais leur complexité est compensée par la diversité des chaines qu&#8217;ils peuvent créer.</p>
+</div>
+<div class="paragraph">
+<p><strong>Partie 2</strong>: Les EDOs stochastiques sont largement utilisées dans L&#8217;épidémiologie. On a vue 2 approches : solution du système des EDOs avec Octave et dérviation des EDOs à partir l&#8217;EDP hyperbolique de Kolmogorov par le méthode des caractéristiques, qui peut être vu comme une alternative à MEF pour les EDPs de transport (y compris stochastiques).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_project_management">Project Management</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_diagramme_de_gantt">Diagramme de Gantt</h3>
+<div class="imageblock">
+<div class="content">
+<img src="gantt.png" alt="gantt">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_github">GitHub</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/vincentvigon/MATHIS2/tree/polymers" class="bare">https://github.com/vincentvigon/MATHIS2/tree/polymers</a> ( y compris TODO liste, mise à jour chaque semaine)</p>
+</li>
+<li>
+<p><a href="https://github.com/feelpp/2017-stage-oxana" class="bare">https://github.com/feelpp/2017-stage-oxana</a> (y compris "Project")</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bibliographie">Bibliographie</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Sokal, D.A. "Monte Carlo methods for the self-avoiding walk". New York University, Department of Physics, May 1994;</p>
+</li>
+<li>
+<p>Beleno, C., Yau, K. "Polymers". Universitãt Bonn, Computational Physics Project, WS 10/11;</p>
+</li>
+<li>
+<p>Isham, V. "Stochastic Models for Epidemics". University College London, Department of Statistical Science, December 2004;</p>
+</li>
+<li>
+<p>Chalub, F., Souza, M. "The SIR epidemic model from a PDE point of view". Mathematical and Computer Modelling, Volume 53, Issues 7–8, April 2011, Pages 1568-1574;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2017-08-26 15:52:15 CEST
+</div>
+</div>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.6.0/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+</body>
+</html>
