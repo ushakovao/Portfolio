@@ -32,6 +32,10 @@ class Class_sg():
     def removeSubjectorFromAllClasses(self, teacherByIdToAdd):
         self.teacherById.append(teacherByIdToAdd)
     
+    def addTeacher(self, teacherByIdToAdd):
+        self.teacherById.append(teacherByIdToAdd)
+    
+    
     def removeTeacher(self, teacherByIdToRemove):
         self.teacherById.remove(teacherByIdToRemove)
     
